@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post Office Employee Feedback Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* Reset and Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--reddie);
+}
+
+  :root{
+    --maroon: #800000;
+    --reddie: #9f1d1d;;
+    --beigge: #DAD4B5;
+    --cream: #F2E8C6;
+}
+.form-container {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 50px;
+  background: var(--beigge);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+p {
+  text-align: center;
+  color: #555;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  margin-right: 5px;
+  cursor: pointer;
+  background-color: #f4f4f9;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.rating input:checked + label {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.submit-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #45a049;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;;
+}
+
+</style>
+<body>
+  <div class="form-container">
+    <h1>Mail and Parcel Services Feedback Form</h1>
+    <p>Your feedback helps us improve our operations and services. Please take a moment to share your thoughts!</p>
+    
+    <form id="feedback-form">
+      <!-- Service Quality -->
+      <div class="form-group">
+        <label for="service-quality">How would you rate the quality of service provided?</label>
+        <div class="rating">
+          <input type="radio" id="service1" name="service-quality" value="1"><label for="service1">1</label>
+          <input type="radio" id="service2" name="service-quality" value="2"><label for="service2">2</label>
+          <input type="radio" id="service3" name="service-quality" value="3"><label for="service3">3</label>
+          <input type="radio" id="service4" name="service-quality" value="4"><label for="service4">4</label>
+          <input type="radio" id="service5" name="service-quality" value="5"><label for="service5">5</label>
+        </div>
+      </div>
+      
+      <!-- Operational Efficiency -->
+      <div class="form-group">
+        <label for="operational-efficiency">How satisfied were you with your recent experience with sending or receiving mail or packages?</label>
+        <div class="rating">
+          <input type="radio" id="efficiency1" name="operational-efficiency" value="1"><label for="efficiency1">1</label>
+          <input type="radio" id="efficiency2" name="operational-efficiency" value="2"><label for="efficiency2">2</label>
+          <input type="radio" id="efficiency3" name="operational-efficiency" value="3"><label for="efficiency3">3</label>
+          <input type="radio" id="efficiency4" name="operational-efficiency" value="4"><label for="efficiency4">4</label>
+          <input type="radio" id="efficiency5" name="operational-efficiency" value="5"><label for="efficiency5">5</label>
+        </div>
+      </div>
+
+      <!-- Employee Interaction -->
+      <div class="form-group">
+        <label for="employee-interaction">Were you the sender or the receiver of the mail or package?</label>
+        <div class="rating">
+          <input type="radio" id="interaction1" name="employee-interaction" value="1"><label for="interaction1">1</label>
+          <input type="radio" id="interaction2" name="employee-interaction" value="2"><label for="interaction2">2</label>
+          <input type="radio" id="interaction3" name="employee-interaction" value="3"><label for="interaction3">3</label>
+          <input type="radio" id="interaction4" name="employee-interaction" value="4"><label for="interaction4">4</label>
+          <input type="radio" id="interaction5" name="employee-interaction" value="5"><label for="interaction5">5</label>
+        </div>
+      </div>
+
+      <!-- Suggestions -->
+      <div class="form-group">
+        <label for="suggestions">Additional Comments or Suggestions:</label>
+        <textarea id="suggestions" name="suggestions" rows="5" placeholder="Share your thoughts..."></textarea>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" class="submit-btn">Submit Feedback</button>
+    </form>
+  </div>
+</body>
+</html>

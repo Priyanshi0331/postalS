@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postal Seva
+    </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="container">
+           <h1 class="logo"><img src="postal seva logo.png">
+           </h1>
+           <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="">Contact</a></li>
+            <div class="feedback-dropdown">
+                <button class="feedback-btn">
+                    Feedback
+                    <span class="arrow"></span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Report a Bug</a>
+                    <a href="#">Suggest Feature</a>
+                    <a href="#">Contact Support</a>
+                </div>
+            </div>
+           </ul>
+        </div>
+    </nav>
+        
+    </div>
+    <div class="nature">
+        <div class="container">
+            <h1>Welcome To Postal Seva!</h1>
+            <div class="carousel-container">
+                <div class="carousel">
+                    <img src="postoffice img1.avif" class="carousel-image">
+                    <img src="postoffice img2.jpg" class="carousel-image">
+                    <img src="postoffice img3.webp" class="carousel-image">
+                    <img src="postoffice img4.avif" class="carousel-image">
+                </div>
+                <div class="carousel-controls">
+                    <button class="control-btn prev-btn">&lt;</button>
+                    <button class="control-btn next-btn">&gt;</button>
+                </div>
+                <div class="carousel-dots"></div>
+            </div>
+            <p>Escape the textbox treadmill and create your postal ID! Minimal clicks, maximum convenience—because you’ve got better things to do.</p>
+            <div class="buttons">
+                <button class="login">Log In</button>
+                <a href="uniqueID.html"><button class="create">Create</button></a>
+            </div>
+        </div>
+    </div>
+    <div class="cont">
+        <section class="content">
+            <h1>Title 1</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt perferendis beatae qui asperiores alias quibusdam minus totam itaque odit cumque.</p>
+        </section>
+        <section class="content">
+            <h1>Title 2</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt perferendis beatae qui asperiores alias quibusdam minus totam itaque odit cumque.</p>
+        </section>
+        <section class="content">
+            <h1>Title 3</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt perferendis beatae qui asperiores alias quibusdam minus totam itaque odit cumque.</p>
+        </section>
+        <section class="content">
+            <h1>Title 4</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt perferendis beatae qui asperiores alias quibusdam minus totam itaque odit cumque.</p>
+        </section>
+    </div>
+    <script>
+         const feedbackBtn = document.querySelector('.feedback-btn');
+        const dropdownContent = document.querySelector('.dropdown-content');
+        const arrow = document.querySelector('.arrow');
+
+        feedbackBtn.addEventListener('click', () => {
+            dropdownContent.classList.toggle('show');
+            arrow.classList.toggle('up');
+        });
+
+        // Close dropdown when clicking outside
+        window.addEventListener('click', (e) => {
+            if (!feedbackBtn.contains(e.target)) {
+                dropdownContent.classList.remove('show');
+                arrow.classList.remove('up');
+            }
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+            const carousel = document.querySelector('.carousel');
+            const images = document.querySelectorAll('.carousel-image');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            const dotsContainer = document.querySelector('.carousel-dots');
+            let currentIndex = 0;
+            const totalImages = images.length;
+            // Create navigation dots
+            images.forEach((_, index) => {
+                const dot = document.createElement('span');
+                dot.classList.add('dot');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(index));
+                dotsContainer.appendChild(dot);
+            });
+            const dots = document.querySelectorAll('.dot');
+            function updateCarousel() {
+                carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+                // Update active dot
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                });
+            }
+            function goToSlide(index) {
+                currentIndex = index;
+                updateCarousel();
+            }
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % totalImages;
+                updateCarousel();
+            }
+
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+                updateCarousel();
+            }
+
+            // Event listeners for navigation
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+
+            // Optional: Automatic sliding
+            setInterval(nextSlide, 5000);
+        });
+    </script>
+
+
+    <script src="app.js"></script>
+</body>
+</html>

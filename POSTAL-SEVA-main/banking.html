@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post Office Employee Feedback Form</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Global Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: var(--reddie);
+      color: #333;
+      padding: 20px;
+    }
+    :root{
+    --maroon: #800000;
+    --reddie: #a01a1a;;
+    --beigge: #DAD4B5;
+    --cream: #F2E8C6;
+}
+
+
+    .form-container {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 50px;
+      background: var(--beigge);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    p {
+      text-align: center;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    textarea,
+    .rating label {
+      font-size: 14px;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: none;
+      font-family: inherit;
+      font-size: 16px;
+    }
+
+    .rating input {
+      display: none;
+    }
+
+    .rating label {
+      display: block;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .rating label:hover,
+    .rating input:checked + label {
+      background-color: #4CAF50;
+      color: white;
+      padding: 5px;
+      border-radius: 4px;
+    }
+
+    .submit-btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>Banking and Financial Services Feedback Form</h1>
+    <p>Your feedback helps us improve our operations and services. Please take a moment to share your thoughts!</p>
+    
+    <form id="feedback-form">
+      <!-- Service Quality -->
+      <div class="form-group">
+        <label for="service-quality">Which postal banking service are you providing feedback about?</label>
+        <div class="rating">
+          <input type="radio" id="service1" name="service-quality" value="1">
+          <label for="service1">Post Office Savings Accounts</label>
+
+          <input type="radio" id="service2" name="service-quality" value="2">
+          <label for="service2">Fixed Deposits & Recurring Deposits</label>
+
+          <input type="radio" id="service3" name="service-quality" value="3">
+          <label for="service3">Public Provident Fund (PPF)</label>
+
+          <input type="radio" id="service4" name="service-quality" value="4">
+          <label for="service4">Senior Citizens Savings Scheme</label>
+
+          <input type="radio" id="service5" name="service-quality" value="5">
+          <label for="service5">Money Transfer Services (Domestic/International)</label>
+
+          <input type="radio" id="service5" name="service-quality" value="5">
+          <label for="service5">Others</label>
+        </div>
+      </div>
+      
+      <!-- Suggestions -->
+      <div class="form-group">
+        <label for="suggestions"> Comments or Suggestions in detail :</label>
+        <textarea id="suggestions" name="suggestions" rows="5" placeholder="Share your thoughts..."></textarea>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" class="submit-btn">Submit Feedback</button>
+    </form>
+  </div>
+</body>
+</html>

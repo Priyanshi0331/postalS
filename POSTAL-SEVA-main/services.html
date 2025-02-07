@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postal Seva - Services</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --maroon: #800000;
+            --beige: #DAD4B5;
+        }
+
+        body {
+            background-color: var(--maroon); /* Maroon background color */
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .nature h1 {
+            font-family: 'Arial', sans-serif;
+            font-size: 2.5rem;
+            color: #111010;
+            text-align: center;
+            margin-bottom: 10px;
+            margin-top: 60px;
+            letter-spacing: 2px;
+          
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center; /* Center-align the buttons */
+        }
+
+        /* Updated button styles */
+        .service-btn {
+            background-color: var(--beige); /* Beige button color */
+            color: black;
+            padding: 20px 0; /* Larger padding for bigger buttons */
+            width: 100%; /* Ensure all buttons are the same width */
+            max-width: 400px; /* Optional: set a max-width for the buttons */
+            border: none;
+            border-radius: 5px;
+            margin: 10px auto;
+            font-size: 20px; /* Larger font size for the buttons */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: block; /* Make buttons stack vertically */
+        }
+
+        .service-btn:hover {
+            background-color: #b5aa89; /* Slightly darker beige on hover */
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="container">
+           <h1 class="logo"><img src="postal seva logo.png"></h1>
+           <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="feedback.html" id="selectField">Feedback</a></li>
+           </ul>
+        </div>
+    </nav>
+
+    <div class="nature">
+        <div class="container">
+            <h1>Our Services</h1>
+            <p>Explore a wide range of services we offer at Postal Seva, ensuring quality, convenience, and efficiency in everything we do.</p>
+
+            <div class="services-container">
+                <a href="banking.html">
+                <button class="service-btn">Banking and Financial Services</button>
+            </a>
+            <a href="pli.html">
+                <button class="service-btn">Postal Life Insurance Services</button>
+            </a>
+            <a href="mailnparcel.html">
+                <button class="service-btn">Mail and Parcel Services</button></a>
+                <a href="operations.html">
+                <button class="service-btn">Operational Efficiency & Service Quality</button></a>
+                <a href="tech.html">
+                <button class="service-btn">Digital Services & Technology</button></a>
+                <a href="personnel.html">
+                <button class="service-btn">Personnel Interaction & Customer Support</button></a>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
