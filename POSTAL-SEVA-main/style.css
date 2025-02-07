@@ -19,7 +19,7 @@ body{
 
 .container{
     max-width: 1200px;
-    margin: auto;
+    margin: auto;            
 }
 
 .nav{
@@ -52,6 +52,14 @@ body{
 }
 
 .nav ul a{
+    color: var(--maroon);
+    text-decoration: none;
+    padding: 7px 15px;
+    transition: all 0.3s ease-in-out;
+    font-size: 1.25rem;
+}
+
+.feedback-btn p{
     color: var(--maroon);
     text-decoration: none;
     padding: 7px 15px;
@@ -97,8 +105,9 @@ body{
     height: 100vh;
     text-align: center;
     z-index: -2;
-    background: var(--reddie);
+    background-color: var(--reddie);
     color: var(--cream);
+    margin-top: 74px;
     /* position: relative; */
 }
 
@@ -116,7 +125,7 @@ body{
 
 .nature h1{
     font-size: 46px;
-    margin: -20px 0 20px;
+    margin: 5px 20px;
 }
 
 .nature p{
@@ -308,3 +317,4 @@ body{
 .dot.active {
     background-color: #717171;
 }
+
