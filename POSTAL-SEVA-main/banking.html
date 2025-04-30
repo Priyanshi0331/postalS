@@ -151,5 +151,33 @@
       <button type="submit" class="submit-btn">Submit Feedback</button>
     </form>
   </div>
+  <form id="feedback-form">
+    <!-- Your inputs -->
+  </form>
+  
+  <script>
+    document.getElementById('feedback-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+  
+      const formData = new FormData(this);
+      const data = {};
+  
+      formData.forEach((value, key) => {
+        data[key] = value;
+      });
+  
+      fetch('http://localhost:3000/submit-banking', { // Change to form2, form3, etc.
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(res => res.text())
+      .then(msg => alert(msg))
+      .catch(err => console.error('Error:', err));
+    });
+  </script>  
+  
 </body>
 </html>

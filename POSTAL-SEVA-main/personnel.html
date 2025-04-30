@@ -153,5 +153,37 @@ textarea {
       <button type="submit" class="submit-btn">Submit Feedback</button>
     </form>
   </div>
+
+  <script>
+    document.getElementById('feedback-form').addEventListener('submit', function (e) {
+      e.preventDefault(); // Stop default form submission (page reload)
+  
+      const formData = new FormData(this);
+      const data = {};
+  
+      formData.forEach((value, key) => {
+        data[key] = value;
+      });
+  
+      fetch('http://localhost:3000/submit-personnel', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(res => res.text())
+      .then(msg => {
+        alert(msg); // Show feedback to user
+        this.reset(); // Optional: clear the form
+      })
+      .catch(err => {
+        console.error('Error submitting form:', err);
+        alert('There was an error submitting your feedback. Please try again.');
+      });
+    });
+  </script>
+  
+  
 </body>
 </html>

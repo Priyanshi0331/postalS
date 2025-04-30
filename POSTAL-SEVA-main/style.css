@@ -27,6 +27,7 @@ body{
     top: 0;
     right: 0;
     left: 0;
+    z-index: 1000;
     transition: all 0.3s ease-in-out;
     background-color: rgb(255, 255, 255);
 }
@@ -62,7 +63,7 @@ body{
 .feedback-btn p{
     color: var(--maroon);
     text-decoration: none;
-    padding: 7px 15px;
+    padding: 7px 1px;
     transition: all 0.3s ease-in-out;
     font-size: 1.25rem;
 }
@@ -183,7 +184,7 @@ body{
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-top: 5px solid #000;
-    transition: transform 0.2s ease;
+    transition:  0.2s ease;
 }
 
 .arrow.up {
@@ -264,10 +265,13 @@ body{
   }
   
   .carousel-container {
-    max-width: 700px;
+    max-width: 900px;
     margin: 10px auto;
     overflow: hidden;
     position: relative;
+    margin-top: 20px;
+    height: 370px;
+    
 }
 
 .carousel {
@@ -278,6 +282,7 @@ body{
 .carousel-image {
     width: 100%;
     flex-shrink: 0;
+    /* height: 360px; */
 }
 
 .carousel-controls {
