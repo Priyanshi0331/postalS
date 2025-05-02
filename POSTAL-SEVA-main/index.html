@@ -14,7 +14,7 @@
            </h1>
            <ul>
             <li><a href="">Home</a></li>
-            <li><a href="">About</a></li>
+            <li><a href="about.html">About</a></li>
             <!-- <li><a href="services.html">Services</a></li> -->
            
             <li><a href="">Contact</a></li>
@@ -52,6 +52,9 @@
                     <a href="tech.html">Digital Services & Technology</a>
                 </div>
             </div>
+            
+            <li><a href="complaint.html">Complaint</a></li>
+              
         </li>
     
            </ul>
@@ -117,6 +120,25 @@
                 arrow.classList.remove('up');
             }
         });
+        //i made a change from here
+        // Complaints dropdown
+const complaintBtn = document.querySelectorAll('.feedback-btn')[1];
+const complaintDropdown = document.querySelectorAll('.dropdown-content')[1];
+const complaintArrow = document.querySelectorAll('.arrow')[1];
+
+complaintBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    complaintDropdown.classList.toggle('show');
+    complaintArrow.classList.toggle('up');
+});
+
+window.addEventListener('click', (e) => {
+    if (!complaintBtn.contains(e.target)) {
+        complaintDropdown.classList.remove('show');
+        complaintArrow.classList.remove('up');
+    }
+});
+//to here
         document.addEventListener('DOMContentLoaded', () => {
             const carousel = document.querySelector('.carousel');
             const images = document.querySelectorAll('.carousel-image');
@@ -162,7 +184,9 @@
             // Optional: Automatic sliding
             setInterval(nextSlide, 5000);
         });
+
     </script>
+    
 
 
     <script src="app.js"></script>
