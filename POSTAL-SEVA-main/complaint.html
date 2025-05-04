@@ -125,5 +125,34 @@
       </form>
     </div>
   </div>
+  <script>
+    document.querySelector('form').addEventListener('submit', function (e) {
+      e.preventDefault();
+  
+      const data = {
+        category: document.getElementById('category').value,
+        type: document.getElementById('type').value,
+        description: document.getElementById('description').value
+      };
+  
+      fetch('http://localhost:3000/submit-complaint', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(res => res.text())
+      .then(msg => {
+        alert(msg);
+        this.reset();
+      })
+      .catch(err => {
+        console.error('Submission error:', err);
+        alert('Error submitting complaint.');
+      });
+    });
+  </script>
+  
 </body>
 </html>
