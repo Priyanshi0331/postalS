@@ -152,6 +152,20 @@ app.post('/submit-tech', (req, res) => {
     res.send('✅ Feedback submitted successfully!');
   });
 });
+
+app.post('/submit-complaint', (req, res) => {
+  const { category, type, description } = req.body;
+  const sql = 'INSERT INTO complaints (category, type, description) VALUES (?, ?, ?)';
+
+  db.query(sql, [category, type, description], (err) => {
+    if (err) {
+      console.error('Error saving complaint:', err);
+      return res.status(500).send('Error saving complaint');
+    }
+    res.send('Complaint submitted successfully!');
+  });
+});
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
