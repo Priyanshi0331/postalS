@@ -1,9 +1,8 @@
-// // Select the Feedback option and the feedback list
-// const feedbackOption = document.getElementById('feedback-option');
-// const feedbackList = document.getElementById('feedback-list');
-
-// // Add click event listener
-// feedbackOption.addEventListener('click', (event) => {
-//   event.preventDefault(); // Prevent default anchor behavior
-//   feedbackList.classList.toggle('hidden'); // Toggle the 'hidden' class
-// });
+  // Initialize carousel explicitly (optional)
+  const heroCarousel = document.querySelector('#heroCarousel');
+  const carouselInstance = new bootstrap.Carousel(heroCarousel, {
+    interval: 5000,
+    ride: 'carousel',
+    pause: 'hover',
+    wrap: true
+  });
