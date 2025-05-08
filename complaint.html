@@ -5,88 +5,114 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Complaint Form</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color:#a01a1a;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 900px;
-      margin: 20px auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    h2 {
-      background-color: #ffcc00;
-      color: black;
-      padding: 12px;
-      text-align: center;
-      border-radius: 4px;
-      font-size: 1.5rem;
-      margin-bottom: 20px;
-    }
-
-    .form-section {
-      margin-bottom: 20px;
-    }
-
-    .form-section h3 {
-      background-color: #d32f2f;
-      color: #fff;
-      padding: 10px;
-      border-radius: 4px;
-      font-size: 1.2rem;
-    }
-
-    .form-group {
-      margin: 15px 0;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .form-group label {
-      margin-bottom: 6px;
-      font-weight: bold;
-    }
-
-    select, textarea {
-      padding: 10px;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
-
-    button {
-      background-color: #d32f2f;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      font-size: 1rem;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #b71c1c;
-    }
-  </style>
 </head>
+<style>
+  :root {
+  --primary-color: #B22222;       /* Deep Red */
+  --secondary-color: #002147;     /* Dark Blue */
+  --text-dark: #1e1e1e;           /* Dark Text */
+  --bg-light: #f8f9fa;            /* Light Background */
+  --muted-gray: #6c757d;          /* Muted Gray */
+  --highlight-gold: #FFCB6B;      /* Golden Highlight */
+}
+
+.container {
+  max-width: 750px;
+  margin: 4rem auto;
+  padding: 3rem 2rem;
+  background: var(--bg-light);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-dark);
+}
+
+.container h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+
+.form-section h3 {
+  color: var(--secondary-color);
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  border-left: 5px solid var(--highlight-gold);
+  padding-left: 0.8rem;
+}
+
+.form-group {
+  margin-bottom: 1.8rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  color: var(--text-dark);
+}
+
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  background-color: white;
+  color: var(--text-dark);
+}
+
+select:focus,
+textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+button[type="submit"] {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.8rem 2rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: block;
+  margin: 2rem auto 0;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--bg-light);
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+
+  .form-section h3 {
+    font-size: 1.2rem;
+  }
+}
+
+</style>
 <body>
   <div class="container">
     <h2>Complaint Registration</h2>
 
     <div class="form-section">
-      <h3>Complaint Details</h3>
 
       <form action="#" method="post">
         <div class="form-group">
