@@ -4,113 +4,137 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Post Office Employee Feedback Form</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Global Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background-color: var(--reddie);
-      color: #333;
-      padding: 20px;
-    }
-    :root{
-    --maroon: #800000;
-    --reddie: #a01a1a;;
-    --beigge: #DAD4B5;
-    --cream: #F2E8C6;
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+  :root {
+  --primary-color: #B22222;       /* Deep Red */
+  --secondary-color: #002147;     /* Dark Blue */
+  --text-dark: #1e1e1e;           /* Dark Text */
+  --bg-light: #f8f9fa;            /* Light Background */
+  --muted-gray: #6c757d;          /* Muted Gray */
+  --highlight-gold: #FFCB6B;      /* Golden Highlight */
 }
 
+.form-container {
+  background: var(--bg-light);
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  color: var(--text-dark);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-    .form-container {
-      max-width: 1000px;
-      margin: 50px auto;
-      padding: 50px;
-      background: var(--beigge);
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-    }
+.form-container h1 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  text-align: center;
+}
 
-    h1 {
-      text-align: center;
-      color: #333;
-      margin-bottom: 10px;
-    }
+.form-container p {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--muted-gray);
+  margin-bottom: 2rem;
+}
 
-    p {
-      text-align: center;
-      color: #555;
-      margin-bottom: 20px;
-    }
+.form-group {
+  margin-bottom: 2rem;
+}
 
-    .form-group {
-      margin-bottom: 20px;
-    }
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: var(--text-dark);
+}
 
-    label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 8px;
-      color: #333;
-    }
+/* For multi-line service feedback options */
+.rating {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 0.75rem;
+}
 
-    textarea,
-    .rating label {
-      font-size: 14px;
-    }
+.rating input[type="radio"] {
+  display: none;
+}
 
-    textarea {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      resize: none;
-      font-family: inherit;
-      font-size: 16px;
-    }
+.rating label {
+  min-width: 360px;
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text-dark);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
 
-    .rating input {
-      display: none;
-    }
+.rating input[type="radio"]:checked + label {
+  background-color: var(--highlight-gold);
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+  font-weight: 600;
+  transform: scale(1.02);
+}
 
-    .rating label {
-      display: block;
-      margin-bottom: 10px;
-      cursor: pointer;
-    }
+textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  font-size: 1rem;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
 
-    .rating label:hover,
-    .rating input:checked + label {
-      background-color: #4CAF50;
-      color: white;
-      padding: 5px;
-      border-radius: 4px;
-    }
+textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
 
-    .submit-btn {
-      display: block;
-      width: 100%;
-      padding: 10px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
+.submit-btn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.8rem 2rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: block;
+  margin: 0 auto;
+}
 
-    .submit-btn:hover {
-      background-color: #45a049;
-    }
-  </style>
-</head>
+.submit-btn:hover {
+  background-color: var(--bg-light);
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  transform: translateY(-2px);
+}
+
+/* Responsive tweaks */
+@media (max-width: 576px) {
+  .form-container {
+    padding: 2rem 1rem;
+  }
+
+  .rating label {
+    font-size: 0.9rem;
+  }
+}
+
+</style>
 <body>
   <div class="form-container">
     <h1>Banking and Financial Services Feedback Form</h1>

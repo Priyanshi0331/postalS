@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+
+body {
+background-image: url(bg.avif);
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+}
+
+.login-container {
+  max-width: 500px;
+  margin: 5rem auto;
+  padding: 2.5rem 2rem;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.form-group input {
+  width: 90%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: white;
+  transition: border-color 0.3s ease;
+  color: var(--text-dark);
+}
+
+.form-group input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.submit-btn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.8rem 1.8rem;
+  font-size: 1rem;
+  border:2px solid var(--primary-color);
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 40%;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: var(--bg-light);
+  border:2px solid var(--primary-color);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+#otp-section {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--muted-gray);
+  /* display: none; Initially hidden */
+}
+
+#otp-section .form-group {
+  margin-bottom: 1rem;
+}
+
+#otp-section label {
+  color: var(--secondary-color);
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    padding: 2rem 1rem;
+    margin: 2rem 1rem;
+  }
+
+  .submit-btn {
+    font-size: 0.95rem;
+    padding: 0.7rem 1.2rem;
+  }
+}
+
+</style>
+<body>
+    
+    <div class="login-container">
+        <form id="login-form">
+          <h2>Login with Postal ID</h2>
+      
+          <div class="form-group">
+            <label for="postalId">Unique Postal ID*</label>
+            <input type="text" id="postalId" name="postalId" placeholder="Enter your Postal ID" required>
+          </div>
+      
+          <button type="submit" class="submit-btn">Send OTP</button>
+      
+          <div id="otp-section">
+            <div class="form-group">
+              <label for="otp">Enter OTP</label>
+              <input type="text" id="otp" name="otp" placeholder="Enter OTP" required>
+            </div>
+            <button type="button" class="submit-btn" id="verify-otp">Verify & Login</button>
+          </div>
+        </form>
+      </div>
+      
+
+</body>
+</html>

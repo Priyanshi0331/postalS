@@ -3,120 +3,153 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unique Postal ID</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <style>
-    :root{
-        --maroon: #800000;
-        --reddie: #D04848;
-        --beigge: #DAD4B5;
-        --cream: #F2E8C6;
-    }
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: sans-serif;
-    }
-    body{
-        background-color: var(--reddie);
-    }
-    .container{
-        margin: 2rem 7rem;
-        padding: 5rem;
-        background-color: var(--cream);
-        border-radius: 1rem;
-    }
-    .container h1{
-        margin-bottom: 2rem;
-    }
-    .form-group {
-        margin-bottom: 20px;
-    }
+  :root {
+  --primary-color: #B22222;       /* Deep Red */
+  --secondary-color: #002147;     /* Dark Blue */
+  --text-dark: #1e1e1e;           /* Dark Text */
+  --bg-light: #f8f9fa;            /* Light Background */
+  --muted-gray: #6c757d;          /* Muted Gray */
+  --highlight-gold: #FFCB6B;      /* Golden Highlight */
+}
+
+.container {
+  max-width: 750px;
+  margin: 4rem auto;
+  padding: 3rem 2rem;
+  background: var(--bg-light);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-dark);
+}
+
+.container h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  color: var(--primary-color);
+}
+
+form .form-group {
+  margin-bottom: 1.5rem;
+}
 
 label {
   display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
 }
 
-input, select {
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
   width: 100%;
-  padding: 10px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+  border-radius: 8px;
+  background-color: white;
+  color: var(--text-dark);
+  transition: border-color 0.3s ease;
 }
 
-button {
-  background-color: #4CAF50;
+input:focus,
+select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+button[type="submit"] {
+  background-color: var(--primary-color);
   color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
+  padding: 0.8rem 2rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
+  display: block;
+  margin: 2rem auto 0;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-button:hover {
-  background-color: #45a049;
+button[type="submit"]:hover {
+  background-color: var(--bg-light);
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  transform: translateY(-2px);
 }
 
-.required:after {
-  content: "*";
-  color: red;
+@media (max-width: 576px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+
+  .container h1 {
+    font-size: 1.6rem;
+  }
 }
+
 </style>
+
 <body>
     <div class="container">
         <h1> Create Unique Postal ID</h1>
     <form>
         <div class="form-group">
-            <label for="firstName">First Name</label>
+            <label for="firstName">First Name*</label>
             <input type="text" id="firstName" name="firstName" required>
         </div>
       
         <div class="form-group">
-          <label for="lastName">Last Name</label>
+          <label for="lastName">Last Name*</label>
           <input type="text" id="lastName" name="lastName" required>
         </div>
       
         <div class="form-group">
-          <label for="address">Address</label>
+          <label for="address">Address*</label>
           <input type="text" id="address" name="address" required>
         </div>
       
         <div class="form-group">
-          <label for="country">Country</label>
+          <label for="country">Country*</label>
           <select id="country" name="country" required>
             <option value="" disabled selected>--Select--</option>
           </select>
         </div>
       
         <div class="form-group">
-          <label for="stateTerritory">State / Union Territory</label>
+          <label for="stateTerritory">State / Union Territory*</label>
           <select id="stateTerritory" name="stateTerritory" required>
             <option value="" disabled selected>--Select--</option>
           </select>
         </div>
       
         <div class="form-group">
-          <label for="cityDistrict">City / District</label>
+          <label for="cityDistrict">City / District*</label>
           <select id="cityDistrict" name="cityDistrict" required>
             <option value="" disabled selected>--Select--</option>
           </select>
         </div>
       
         <div class="form-group">
-          <label for="pinCode">PIN Code</label>
+          <label for="pinCode">PIN Code*</label>
           <input type="text" id="pinCode" name="pinCode" required>
         </div>
       
         <div class="form-group">
-          <label for="email">E-mail</label>
+          <label for="email">E-mail*</label>
           <input type="email" id="email" name="email" required>
         </div>
       
         <div class="form-group">
-          <label for="mobile">Mobile</label>
+          <label for="mobile">Mobile*</label>
           <input type="tel" id="mobile" name="mobile" required>
         </div>
       
